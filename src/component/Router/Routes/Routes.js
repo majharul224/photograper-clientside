@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from '../../LayOut/Main';
+import Blogs from '../../Pages/Blogs/Blogs';
 import Homes from '../../Pages/Home/Homes/Homes';
 import Login from '../../Pages/Login/Login';
 import NotFound from '../../Pages/NotFound/NotFound';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
         ]
     },
