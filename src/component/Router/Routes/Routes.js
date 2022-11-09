@@ -2,6 +2,7 @@ import React from 'react';
 import Main from '../../LayOut/Main';
 import Blogs from '../../Pages/Blogs/Blogs';
 import Homes from '../../Pages/Home/Homes/Homes';
+import Services from '../../Pages/Home/Services/Services';
 import Login from '../../Pages/Login/Login';
 import NotFound from '../../Pages/NotFound/NotFound';
 import Signup from '../../Pages/SignUp/Signup';
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>
             },
         ]
     },

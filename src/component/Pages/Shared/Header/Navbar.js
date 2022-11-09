@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import logo from '../../../../images/icons/footericon.jpg'
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Navbar = () => {
-    // manulist
+    const { user, signout } = useContext(AuthContext)
+    // console.log(user)
+    // console.log(user.email)
+
+    // signOut
+    const handleSignOut = () => {
+        // console.log("helle")
+        signout()
+            .then(() => {
+                toast.success("signout")
+            })
+            .catch(error => toast.error(error.message))
+    }
+
     const menuItems =
         <>
             <li className='font-semibold'><Link to='/'>Home</Link> </li>
-            <li className='font-semibold'><Link to='/'>Home</Link> </li>
-            <li className='font-semibold'><Link to='/'>Home</Link> </li>
+            <li className='font-semibold'><Link to='/services'>Service</Link> </li>
             <li className='font-semibold'><Link to='/blogs'>Blogs</Link> </li>
+            {/* {
+                user?.email ?
+                    <li>
+
+                        <Link onClick={handleSignOut}>Log out</Link>
+                        <span>{user?.displayName}</span>
+                    </li>
+                    :
+                    <li>
+                        <Link to='/login'> LogIn</Link>
+                    </li>
+            } */}
         </>
     return (
         <div className="navbar mb-12 mt-12 bg-base-100">
@@ -28,15 +54,12 @@ const Navbar = () => {
                     <i><span className='text-amber-600 text-3xl'>sport</span> photography</i>
                 </Link>
             </div>
-            {/*  */}
-            <div className="navbar-center hidden lg:flex">
+            {/* manu items */}
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
             </div>
-            {/* <div className="navbar-end">
-                <a className="btn">Get started</a>
-            </div> */}
         </div>
     );
 };
