@@ -12,18 +12,18 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState({})
-    const [loding, setLoding] = useState(true)
+    const [loading, setLoading] = useState(true)
 
        // signup authprovider
 
        const signup = (email, password) => {
-        // return console.log("amit")
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // signin authprovider
     const signin = (email, password) => {
-        // return console.log("amit")
+      setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -41,14 +41,14 @@ const profileUpdate=(name)=>{
     // sign auth
 
     const signout = () => {
-        // return console.log("amit")
+     
         return signOut(auth)
     }
 
  // google authprovider
 
  const signinGoogle = () => {
-
+setLoading(true)
     return signInWithPopup(auth, provider)
 }
   // github authprovider
@@ -61,7 +61,7 @@ const profileUpdate=(name)=>{
 useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
-        setLoding(false)
+        setLoading(false)
         // console.log('auth state changed', currentUser);
     })
 
@@ -71,7 +71,7 @@ useEffect(() => {
 
 }, [])
 
-    const data = {  user, signup, signin, loding, signout, signinGoogle,signinGithub,profileUpdate }
+    const data = {  user, signup, signin, loading, signout, signinGoogle,signinGithub,profileUpdate }
     return (
         <div>
            <AuthContext.Provider value={data}>

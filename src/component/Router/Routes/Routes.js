@@ -6,6 +6,7 @@ import Services from '../../Pages/Home/Services/Services';
 import Login from '../../Pages/Login/Login';
 import NotFound from '../../Pages/NotFound/NotFound';
 import Signup from '../../Pages/SignUp/Signup';
+import PrivateRouter from '../PrivateRouter/PrivateRouter';
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blogs',
-                element: <Blogs></Blogs>
+                element:<PrivateRouter> <Blogs></Blogs></PrivateRouter>
             },
             {
                 path: '/services',
