@@ -24,7 +24,7 @@ const Navbar = () => {
             <li className='font-semibold'><Link to='/'>Home</Link> </li>
             <li className='font-semibold'><Link to='/services'>Service</Link> </li>
             <li className='font-semibold'><Link to='/blogs'>Blogs</Link> </li>
-            {/* {
+            {
                 user?.email ?
                     <li>
 
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <li>
                         <Link to='/login'> LogIn</Link>
                     </li>
-            } */}
+            }
         </>
     return (
         <div className="navbar mb-12 mt-12 bg-base-100">
