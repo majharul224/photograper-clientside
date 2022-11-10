@@ -17,7 +17,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Homes></Homes>
+                element: <Homes></Homes>,
+                loader:()=>fetch("http://localhost:5000/services")
             },
             {
                 path: '/login',
