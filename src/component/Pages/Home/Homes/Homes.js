@@ -10,12 +10,13 @@ import Stats from '../Stats/Stats';
 
 
 const Homes = () => {
-    const items=useLoaderData()
-    
+    const items = useLoaderData()
+
     return (
         <div>
             <Banner></Banner>
             <Services items={items}></Services>
+            
             <About></About>
             <Carousel></Carousel>
             <Stats></Stats>

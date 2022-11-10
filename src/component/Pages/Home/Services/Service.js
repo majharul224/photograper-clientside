@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Service = ({ service }) => {
-    console.log(service)
+    // console.log(service)
     const {  name, img, price, email, descriptio } = service
     return (
         <div>
@@ -10,7 +10,7 @@ const Service = ({ service }) => {
                 <div className="card-body">
                     <h2 className="card-title">Name :{name}</h2>
                     <p>Description : {descriptio.substring(0, 100) + "..."}</p>
-                    <p>Price : {price}</p>
+                    <h3>Price : {price}</h3>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary w-full">detiles</button>
                     </div>
