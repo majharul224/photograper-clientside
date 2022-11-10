@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Service from './Service';
 
 const Services = () => {
+    const services = useLoaderData()
+    // console.log(services)
+ 
     return (
-        <div>
-            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloribus quidem, veniam est blanditiis, voluptates minima libero, et accusantium non optio modi eos quae harum. Fugit eveniet mollitia explicabo labore inventore vero ad aut culpa enim voluptates tempore unde expedita a vitae corporis, rerum distinctio! Eius doloremque in eveniet? Dicta.</h1>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-20'>
+            {
+                services?.map(service => <Service
+                    key={service._id} service={service} >
+                </Service>)
+            }
         </div>
     );
 };
