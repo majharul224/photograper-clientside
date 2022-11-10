@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../../Context/hooks/useTitel';
 
 const Discount = () => {
+    useTitle('discount')
     return (
        
             <div className="p-6 py-12 my-12 bg-red-500	text-white">

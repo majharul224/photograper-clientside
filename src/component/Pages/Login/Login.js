@@ -3,8 +3,10 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logimg from '../../../images/ima/login.png'
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Context/hooks/useTitel';
 const Login = () => {
     const { signin } = useContext(AuthContext)
+    useTitle('login')
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || "/";

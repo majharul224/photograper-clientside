@@ -5,8 +5,10 @@ import Google from  '../../../images/ima/gog.png'
 import GitHub from  '../../../images/ima/github.png'
 import { AuthContext } from '../../Context/AuthProvider';
 import  toast from 'react-hot-toast';
+import useTitle from '../../Context/hooks/useTitel';
 const Signup = () => {
 const {signup, signinGoogle, profileUpdate, signinGithub} =useContext(AuthContext)
+useTitle('signin')
     // Signup handale
 
     const handleSignUp = (e) => {

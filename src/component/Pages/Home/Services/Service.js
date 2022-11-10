@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../../Context/hooks/useTitel';
 
 const Service = ({ service }) => {
+    useTitle('service')
     // console.log(service)
     const {  name, img, price, email, descriptio } = service
     return (
