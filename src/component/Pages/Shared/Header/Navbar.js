@@ -26,11 +26,17 @@ const Navbar = () => {
             <li className='font-semibold'><Link to='/blogs'>Blogs</Link> </li>
             {
                 user?.email ?
-                    <li>
+                    <>
 
-                        <Link onClick={handleSignOut}>Log out</Link>
-                        <span>{user?.displayName}</span>
-                    </li>
+                        <li>
+                            <Link to='/myReview'>My Review</Link>
+                        </li>
+                        <li>
+                            <span>{user?.displayName}</span>
+                            <button onClick={handleSignOut}>Log out</button>
+
+                        </li>
+                    </>
                     :
                     <li>
                         <Link to='/login'> LogIn</Link>
