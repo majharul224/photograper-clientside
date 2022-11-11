@@ -38,15 +38,6 @@ const AddReviwes = () => {
             .catch((error) => console.log(error));
     };
 
-    // useEffect(() => {
-    //     fetch(
-    //         `http://localhost:5000/myreviews/${reviews?.userEmail}`
-    //     )
-    //         .then((res) => res.json())
-    //         .then((data) => setReviews(data))
-    //         .catch((err) => console.log(err));
-    // }, []);
-
     return (
         <div>
             <section className="p-6 mt-10 mb-52 dark:text-gray-100">
